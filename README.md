@@ -100,6 +100,12 @@ These endpoints are not a documented API and may change. The app never sees your
 - Data from MetaForge, the wiki, saved state and imported files is validated (types, ids, ranges)
   before use.
 
+## License
+
+The code is under the [MIT License](LICENSE). That covers this repository only: the bundled fonts are
+under the SIL Open Font License, the WebView2 SDK under Microsoft's license, and the data the app shows
+belongs to its sources (see below and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
+
 ## Credits
 
 - Data: [MetaForge](https://metaforge.app/arc-raiders) (community-maintained; attribution required for
