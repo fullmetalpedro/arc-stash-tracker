@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://static.metaforge.app https://unhbvkszwhczbjxgetgk.supabase.co https://arcraiders.wiki data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'">
+<title>ARC Stash Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="loading"><div class="box">
+  <svg width="120" height="60" viewBox="0 0 120 60"><g stroke-width="9"><path d="M8 58 L48 2" stroke="#e5372d"/><path d="M26 58 L66 2" stroke="#f9c21a"/><path d="M44 58 L84 2" stroke="#3ccf6e"/><path d="M62 58 L102 2" stroke="#1fb3e6"/></g></svg>
+  <h1>Stash Tracker</h1><p id="loadMsg">Loading item data…</p>
+</div></div>
+
+<header>
+  <div class="brand">
+    <svg viewBox="0 0 58 44" preserveAspectRatio="none" aria-hidden="true"><g stroke-width="5"><path d="M-6 50 L22 -6" stroke="#e5372d"/><path d="M4 50 L32 -6" stroke="#f9c21a"/><path d="M14 50 L42 -6" stroke="#3ccf6e"/><path d="M24 50 L52 -6" stroke="#1fb3e6"/></g></svg>
+    <h1 id="title">Stash<span>Tracker</span></h1>
+  </div>
+  <div class="sep"></div>
+  <div class="hgroup" id="slotGroup" title="Stash slots used, from your MetaForge sync" hidden>
+    <span class="hl">Stash</span><div class="bar"><i id="slotBar"></i></div><span class="hv" id="slotText"></span>
+  </div>
+  <div class="hgroup" title="What everything in your stash sells for">
+    <span class="hl">Value</span><span class="hv" id="stashValue"></span>
+  </div>
+  <div class="spacer"></div>
+  <div id="player" class="row" style="gap:16px;flex-wrap:nowrap"></div>
+  <div class="chipbtn" id="syncChip" title="MetaForge sync"><span class="dot"></span><span id="syncLabel">Sync</span><span class="t" id="syncTimer"></span></div>
+</header>
+
+<main>
+  <aside>
+    <h2>Stash <span class="cnt" id="invCount"></span></h2>
+    <div class="row" style="margin:0 0 10px;flex-wrap:nowrap">
+      <input id="invFilter" placeholder="Filter stash" style="flex:1;min-width:0">
+      <select id="invSort"><option value="name">Name</option><option value="value">Value</option><option value="rarity">Rarity</option><option value="type">Type</option><option value="slots">Slots</option><option value="needed">Needed first</option><option value="spare">Spare first</option></select>
+    </div>
+    <div id="inv"></div>
+  </aside>
+
+  <section class="view">
+    <nav class="tabs" id="tabs">
+      <button data-tab="tracked" class="on">Tracked</button>
+      <button data-tab="find">Find</button>
+      <button data-tab="craft">Crafting</button>
+      <button data-tab="prices">Prices</button>
+      <button data-tab="projects">Projects</button>
+      <button data-tab="insights">Insights</button>
+      <button data-tab="traders">Traders</button>
+    </nav>
+    <div id="view"></div>
+  </section>
+</main>
+
+<div class="overlay" id="syncModal"><div class="modal" id="syncBody"></div></div>
+<div class="hovercard" id="tip"></div>
+<div class="toast" id="toast"></div>
+
+<script type="module" src="bridge.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

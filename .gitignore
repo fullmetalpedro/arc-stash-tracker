@@ -1,0 +1,18 @@
+# Build output
+dist/
+
+# WebView2 SDK: downloaded and hash-checked by shell/build.ps1
+shell/lib/
+
+# Editor / OS noise
+*.tmp
+.vs/
+.vscode/
+Thumbs.db
+desktop.ini
+
+# Claude Code session files
+.claude/
+
+# Private development log (pre-release builds, written to the author)
+docs/dev-log.md
